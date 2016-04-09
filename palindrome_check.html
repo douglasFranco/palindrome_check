@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Douglas - Palindrome Verify</title>
+      <script>               
+          function check_Palindrome(){  
+              var user_input = prompt("Enter the term you want to check");            
+              var cstr = user_input.toLowerCase().replace(/[^a-zA-Z0-9]+/g,'');  
+              var ccount = 0;                             
+                if(cstr==="") {  
+                    alert("Nothing found!");                        
+                    check_Palindrome();                    
+                }             
+                if ((cstr.length) % 2 === 0) {  
+                    ccount = (cstr.length) / 2;  
+                } else {             
+                    if (cstr.length === 1) {  
+                        alert("Entry is a palindrome.");  
+                        check_Palindrome();;  
+                    } else {               
+                        ccount = (cstr.length - 1) / 2;  
+                    }  
+                }                
+                for (var x = 0; x < ccount; x++) {              
+                    if (cstr[x] != cstr.slice(-1-x)[0]) {  
+                        alert("Entry is not a palindrome.");  
+                        check_Palindrome();;  
+                    }  
+                }  
+          alert("The entry is a palindrome.");  
+          check_Palindrome();;  
+          }                        
+      </script>
+    </head>
+    <body onload="check_Palindrome();">
+    </body>
+  </html>
